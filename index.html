@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Hot air balloon</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="hot-air-balloon/css/style.css">
+      <link rel="stylesheet" href="balloonpalooza/css/style.css">
+      <link rel="stylesheet" href="css3-balloons-animation/css/style.css">
+
+  <style>
+      .play{
+       box-shadow: 0px 2px 20px #b33e64 !important
+      }
+      .play, .content {
+          opacity: 1;
+          transition: all linear 1s;
+          -webkit-transition: all linear 1s;
+          -moz-transition: all linear 1s;
+          transition-delay: 2s;
+          -webkit-transition-delay: 2s;
+      }
+      .play.hide, .content.hide{
+          opacity: 0;
+      }
+      .balloons, .second {
+          opacity: 0;
+           transition: all linear 1s;
+          -webkit-transition: all linear 1s;
+          -moz-transition: all linear 1s;
+          transition-delay: 2s;
+          -webkit-transition-delay: 2s;
+      }
+      
+      .balloons.show, .second.show {
+          opacity: 1;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="content"><div class="sun"></div>
+<div class="cloud"></div>
+<div class="cloud"></div>
+     
+<div class="hot-air-balloon">
+  <div class="balloon"><span></span></div>
+  <div class="basket"></div>
+</div>
+     <div class="balloons">
+</div>
+  <audio id="sound1" src="aud.m4a" ></audio>
+    <a class="btn play" onclick="playSound1()">Surprise</a>
+      </div>
+    <div class="second">
+     <link href='https://fonts.googleapis.com/css?family=Wendy+One' rel='stylesheet' type='text/css'>
+<div class="container">
+  <div class="balloonn">
+    <div><span>☺</span></div>
+    <div><span>B</span></div>
+    <div><span>D</span></div>
+    <div><span>A</span></div>
+    <div><span>Y</span></div>
+    <div><span>!</span></div>
+  </div>
+  <h1>NACHU</h1>
+</div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script  src="hot-air-balloon/js/index.js"></script>
+<!--    <script  src="balloonpalooza/js/index.js"></script>-->
+<script>
+    var audio1 = document.getElementById('sound1');
+    function playSound1(){
+        console.log("play")
+    audio1.play();
+$(".play").addClass("hide");
+$(".balloons").addClass("show");
+$(function() {
+  for (var i=0; i < 40; i++) {
+    $('.balloons').append("<div class='balloon balloon" + i + "'></div>");
+  }
+});
+    }
+    $('#sound1').on('ended', function() {
+   $(".content").addClass("hide");
+   $(".second").addClass("show");
+   // enable button/link
+});
+    </script>
+</body>
+</html>
